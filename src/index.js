@@ -99,4 +99,86 @@ function howMany(...args) {
 const sum = (...args) => args.reduce((a, b) => a + b, 0);
 
 console.log(sum(2,3,4,5,8,7));
+
+// Copie todo o conteúdo de arr1 em outro array arr2 usando o operador spread.
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];  // Altere esta linha
+
+console.log(arr2);
+
+// Usar atribuição de desestruturação para extrair valores de objetos
+
+const user = { name: 'John Doe', age: 34 };
+
+const { name, age } = user;
+
+console.log(`${name} tem ${age} anos de idade`);
+
+//  outro exemplo
+
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };
+  
+  // Altere apenas o código abaixo desta linha
+  
+  const { today, tomorrow } = HIGH_TEMPERATURES;
+
+  console.log(today, tomorrow);
+
+//   Usar atribuição de desestruturação para atribuir variáveis de objetos
+
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+
+console.log(highToday, highTomorrow);
+
+// Usar atribuição de desestruturação para atribuir variáveis de objetos aninhados
+
+const user2 = {
+    johnDoe: { 
+      age2: 34,
+      email: 'johnDoe@freeCodeCamp.com'
+    }
+  };
+  
+//   desestruturação
+  const { johnDoe: { age2, email }} = user2;
+
+//   E aqui está como você pode atribuir o valor de uma propriedade de um objeto para variáveis com nomes diferentes:
+
+const { johnDoe: { age2: userAge, email: userEmail }} = user2;
+
+console.log(age2, email);
+console.log(userAge, userEmail);
+
+// Substitua as duas atribuições com uma atribuição de desestruturação equivalente. Ainda deve ser atribuído às variáveis lowToday e highToday1 os valores de today.low e today.high do objeto LOCAL_FORECAST.
+
+const LOCAL_FORECAST = {
+    yesterday: { low: 61, high: 75 },
+    today: { low: 64, high: 77 },
+    tomorrow: { low: 68, high: 80 }
+  };
+  
+  // Altere apenas o código abaixo desta linha
+  
+  const { today: {low: lowToday, high: highToday1}} = LOCAL_FORECAST;
+
+  console.log(lowToday, highToday1);
+
+//   Usar atribuição de desestruturação para atribuir variáveis a partir de arrays
+
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b);
+
+// as tres virgulas 3 valores e será igual a 5
+const [d, e,,, f] = [1, 2, 3, 4, 5, 6];
+console.log(d, e, f);
+
+
+
 app.listen(3000);
