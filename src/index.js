@@ -179,6 +179,62 @@ console.log(a, b);
 const [d, e,,, f] = [1, 2, 3, 4, 5, 6];
 console.log(d, e, f);
 
+/**
+ * Usar atribuição de desestruturação com o parâmetro rest para reatribuir elementos de array
+ */
+
+console.log(`
+*******************
+*******************
+`);
+const [aa, bb, cc, dd, ee, ...arrr] = [1, 2, 3, 4, 5, 7, 9, 10, 15];
+
+//  consigo pegar os elementos que estão desestruturdos e colocalos em uma array
+console.log([aa, bb]);
+
+//  também consigo reestruturálos em um novo array
+const newArr = [cc, dd, ee];
+console.log(newArr);
+console.log(arrr);
+
+console.log(`
+*******************
+*******************
+`);
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+    // Altere apenas o código abaixo desta linha
+    const [,, ...arr] = list; // Altere esta linha
+    // Altere apenas o código acima desta linha
+    return arr;
+}
+const arrrr = removeFirstTwo(source);
+console.log(arrrr);
+
+console.log(`
+*******************
+*******************
+`);
+
+// Usar atribuição de desestruturação para passar um objeto como parâmetro de uma função
+
+/**
+ * const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+
+}
+
+ */
+
+// OU
+
+/**
+ * const profileUpdate = ({ name, age, nationality, location }) => {
+
+}
+
+ */
+
 
 
 app.listen(3000);
