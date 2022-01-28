@@ -235,6 +235,77 @@ console.log(`
 
  */
 
+const result = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["no-extra-semi", "no-dup-keys"]
+  };
+  function makeList(arr) {
+    // Altere apenas o código abaixo desta linha
+    const failureItems = [];
+      for (let i = 0; i < arr.length; i++){
+         failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+      }
+    // Altere apenas o código acima desta linha
+  
+    return failureItems;
+  }
+  
+  const failuresList = makeList(result.failure);
+  console.log(failuresList);
 
+  /**
+   * Escrever declarações literais de objetos concisas usando a forma abreviada de propriedade de objeto
 
-app.listen(3000);
+ES6 adiciona alguns suportes legais para facilmente definir literais de objetos.
+
+Considere o seguinte código:
+   */
+
+/**
+ * const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+
+ */
+
+const getMousePosition = (x, y) => ({ x, y });
+
+/**
+ * Use a abreviação de propriedade de objeto com literais de objeto para criar e retornar um objeto com as propriedades name, age e gender.
+ */
+
+// RESOLUÇÃO
+
+const createPerson = (name, age, gender) => {
+    // Altere apenas o código abaixo desta linha
+    return {
+      name,
+      age,
+      gender
+    };
+    // Altere apenas o código acima desta linha
+  };
+
+  // Escrever funções declarativas concisas com ES6
+
+//   const person = {
+//     name: "Taylor",
+//     sayHello: function() {
+//       return `Hello! My name is ${this.name}.`;
+//     }
+//   };
+
+// Com ES6, você pode remover a palavra-chave function e dois pontos ao definir funções em objetos. Aqui está um exemplo dessa sintaxe:
+
+const person = {
+    name: "Taylor",
+    sayHello() {
+      return `Hello! My name is ${this.name}.`;
+    }
+  };
+  
+  
+console.log("Rodando")
+app.listen(3030);
