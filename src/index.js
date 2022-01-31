@@ -290,19 +290,19 @@ const createPerson = (name, age, gender) => {
 
   // Escrever funções declarativas concisas com ES6
 
-//   const person = {
-//     name: "Taylor",
+//   const person1 = {
+//     name1: "Taylor",
 //     sayHello: function() {
-//       return `Hello! My name is ${this.name}.`;
+//       return `Hello! My name is ${this.name1}.`;
 //     }
 //   };
 
 // Com ES6, você pode remover a palavra-chave function e dois pontos ao definir funções em objetos. Aqui está um exemplo dessa sintaxe:
 
-const person = {
-    name: "Taylor",
+const person1 = {
+    name1: "Taylor",
     sayHello() {
-      return `Hello! My name is ${this.name}.`;
+      return `Hello! My name is ${this.name1}.`;
     }
   };
   
@@ -344,16 +344,64 @@ class Vegetable {
     constructor(name){
       this.name = name;
     }
+    eat() {
+        return ` Eu como ${this.name}`
+    }
   }
   // Altere apenas o código acima desta linha
   console.log(`
   *******************
   *******************
   `)
-  const carrot = new Vegetable('carrot');
-  console.log(carrot.name); // Deve exibir 'carrot'
-
-
+  const vegetable = new Vegetable('Cenoura');
+  console.log(vegetable.eat()); // Deve exibir "Eu como cenoura"'
   
+  console.log(`
+  *******************
+  *******************
+  `)
+  
+  class Person {
+      constructor(name){
+          this.name = name;
+    }
+
+    walk(){
+        return `${this.name} está caminhando!`
+    }
+
+    eat(){
+        return `${this.name} está comendo!`
+    }
+
+    run(){
+        return `${this.name} está correndo!`
+    }
+}
+
+const nana = new Person("Nana");
+console.log(nana.name);
+nana.name = "NANANA";
+console.log(nana.name);
+console.log(nana.run());
+
+const felipe = new Person("Felipe");
+console.log(felipe.walk());
+
+const john = new Person("John");
+console.log(john.eat());
+
+
+console.log(`
+*******************
+*******************
+`)
+
 console.log("Rodando")
+
+console.log(`
+*******************
+*******************
+`)
+console.log("Rodando DE VERDADE")
 app.listen(3030);
