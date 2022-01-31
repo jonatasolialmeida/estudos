@@ -397,6 +397,128 @@ console.log(`
 *******************
 `)
 
+class Book {
+    constructor(author) {
+      this._author = author;
+    }
+    // getter
+    get writer() {
+      return this._author;
+    }
+    // setter
+    set writer(updatedAuthor) {
+      this._author = updatedAuthor;
+    }
+  }
+  const novel = new Book('anonymous');
+  console.log(novel.writer);
+  novel.writer = 'newAuthor';
+  console.log(novel.writer);
+
+  console.log(`
+  *******************
+  *******************
+  `)
+
+// Exportando funções
+
+// const uppercaseString = (string) => {
+//     return string.toUpperCase();
+//   }
+  
+//   export const lowercaseString = (string) => {
+//     return string.toLowerCase()
+//   }
+  
+//   export {uppercaseString};
+
+//   importando tudo de um arquivo
+
+// import * as stringFunctions from "./string_functions.js";
+
+// importando funções especificas
+
+// import { lowercaseString, uppercaseString } from "./string_functions.js"
+
+/**
+ * Exportar apenas um valor com export default
+
+Na lição de export você aprendeu sobre a sintaxe que chamamos de exportação nomeada. Naquela lição você exportou múltiplas funções e variáveis que ficaram disponíveis para utilização em outros arquivos.
+
+Há outra sintaxe para export que você precisa saber, conhecida como exportação padrão. Você usará essa sintaxe quando apenas um valor estiver sendo exportado de um arquivo ou módulo. Essa sintaxe também é usada para exportar um valor substituto caso o valor original não possa ser exportado.
+
+Abaixo estão exemplos utilizando a sintaxe export default:
+ */
+
+// export default function add(x, y) {
+//     return x + y;
+//   }
+  
+//   export default function (x, y) {
+//     return x + y;
+//   }
+
+  /**
+   * O primeiro exemplo é uma função nomeada e o segundo é uma função anônima.
+
+A sintaxe export default é usada para exportar um único valor de um arquivo ou módulo. Tenha em mente que você não pode usar o export default com var, let ou const
+   */
+
+/**
+ * Concluir uma promessa com resolve e reject
+
+Uma promessa possui três estados: pendente (pending), cumprida (fulfilled) e rejeitada (rejected). A promessa que você criou no desafio anterior está presa no estado pending para sempre porque você não adicionou uma forma de concluir a promessa. Os parâmetros resolve e reject passados para o argumento da promessa servem para este propósito. resolve é utilizado quando a promessa for bem-sucedida, enquanto reject é utilizado quando ela falhar. Ambos são métodos que recebem apenas um argumento, como no exemplo abaixo.
+
+const myPromise = new Promise((resolve, reject) => {
+  if(condition here) {
+    resolve("Promise was fulfilled");
+  } else {
+    reject("Promise was rejected");
+  }
+});
+
+O exemplo acima usa strings como argumento desses métodos, mas você pode passar qualquer outro tipo de dado. Geralmente, é passado um objeto para esses métodos. Assim você pode acessar as propriedades deste objeto e usá-las em seu site ou em qualquer outro lugar.
+
+ */
+
+/**
+ * Adapte a promessa para ambas as situações de sucesso e fracasso. Se responseFromServer for true, chame o método resolve para completar a promessa com sucesso. Passe a string We got the data como argumento para o método resolve. Se responseFromServer for false, passe a string Data not received como argumento para o método reject.
+ */
+
+//  const makeServerRequest = new Promise((resolve, reject) => {
+//     // responseFromServer representa uma resposta de um servidor
+//     let responseFromServer;
+  
+//     if(responseFromServer) {
+//       resolve("We got the data")// Altere esta linha
+//     } else {  
+//       reject("Data not received")// Altere esta linha
+//     }
+//   });
+
+const makeServerRequest = new Promise((resolve, reject) => {
+    // responseFromServer is set to true to represent a successful response from a server
+    let responseFromServer = true;
+      
+    if(responseFromServer) {
+      resolve("We got the data");
+    } else {	
+      reject("Data not received");
+    }
+  });
+  
+  makeServerRequest.then(result => {
+    console.log(result);
+  });
+
+  makeServerRequest.catch(error => {
+    console.log(error);
+  });
+  
+  console.log(`
+  *******************
+  *******************
+  `)
 console.log("Rodando")
 
 console.log(`
