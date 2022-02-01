@@ -248,12 +248,57 @@ Observação: você quer encontrar tanto maiúsculas quanto minúsculas.
 
  */
 
-let quoteSample1 = "The quick brown fox jumps over the lazy dog.";
+let quoteSample1 = "The quick brown 5 fox jumps over 3 the lazy 2 dog.";
+//  o uso do (-) também serve para intervalos de números
 let alphabetRegex = /[a-z]/gi; // Altere esta linha
+let alphabetRegex1 = /[^aeiou]/gi; // Altere esta linha
 let result7 = quoteSample1.match(alphabetRegex); // Altere esta linha
+let result8 = quoteSample1.match(alphabetRegex1); // Altere esta linha
+
+// exemplo dse uso com hifem em números
+
+/**
+ * E também é possível combinar intervalos de letras e números em uma única classe de caracteres.
+ * let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/ig;
+jennyStr.match(myRegex);
+
+ */
 
 console.log(result7);
+console.log(result8);
 
+
+/**
+ * Capturar caracteres que aparecem uma ou mais vezes seguidas
+
+Às vezes você precisa capturar um caractere, ou grupo de caracteres, que aparece uma ou mais vezes seguidas. Ou seja, que aparecem pelo menos uma vez e podem se repetir.
+
+Você pode usar o caractere + para verificar se é o caso. Lembre-se que o caractere ou padrão precisa repetir-se consecutivamente. Ou seja, um atrás do outro.
+
+Por exemplo, /a+/g encontra um resultado na string abc e retorna ["a"]. Mas o + também faz com que encontre um único resultado em aabc e retorne ["aa"].
+
+Se a string fosse abab, a operação retornaria ["a", "a"] porque entre os dois a há um b. Por fim, se não houvesse nenhum a na string, como em bcd, nada seria encontrado.
+
+Você quer capturar as ocorrências de s quando acontecer uma ou mais vezes em Mississippi. Escreva uma regex que use o caractere +.
+
+ */
+
+console.log(`
+*********************
+*********************
+`)
+
+let difficultSpelling = "Mississippi";
+let myRegex2 = /s+/gi; // Altere esta linha
+let result9 = difficultSpelling.match(myRegex2);
+
+console.log(result9);
+
+console.log(`
+*********************
+*********************
+`)
 
 app.listen(3030);
 
