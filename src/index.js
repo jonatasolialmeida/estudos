@@ -300,5 +300,65 @@ console.log(`
 *********************
 `)
 
+/**
+ * apturar caracteres que aparecem zero ou mais vezes seguidas
+
+O último desafio fez uso do caractere + para buscar caracteres que ocorrem uma ou mais vezes. Existe um outro caractere que permite buscar zero ou mais ocorrências de um padrão.
+
+O caractere usado para isso é o asterisco: *.
+
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+// soccerWord.match(goRegex);
+// gPhrase.match(goRegex);
+// oPhrase.match(goRegex);
+
+// As três chamadas a match retornam, na ordem, os valores: ["goooooooo"], ["g"] e null.
+
+// Neste desafio, a string chewieQuote recebeu o valor Aaaaaaaaaaaaaaaarrrgh! por trás dos panos. Escreva uma regex, chewieRegex, que usa o caractere * para capturar um A maiúsculo seguido imediatamente de zero ou mais a minúsculos em chewieQuote. A regex não precisa de flags ou de classes de caracteres. Ela também não deve capturar nenhuma outra parte da string.
+
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+
+// Altere apenas o código abaixo desta linha
+let chewieRegex = /Aa*/; // Altere esta linha
+// Altere apenas o código acima desta linha
+
+let result10 = chewieQuote.match(chewieRegex);
+
+console.log(result10);
+
+console.log(`
+********************
+********************
+`)
+
+/**
+ * Encontrar caracteres com captura preguiçosa
+
+Em expressões regulares, uma captura gananciosa encontra a parte mais longa o possível de uma string em que a regex atua e a retorna como resultado. A alternativa se chama captura preguiçosa e ela encontra o menor pedaço o possível de uma string que satisfaz a regex.
+
+Você pode aplicar a regex /t[a-z]*i/ à string "titanic". Essa regex é basicamente um padrão que começa com t, termina com ie tem algumas letras no meio delas.
+
+Expressões regulares são gananciosas por padrão, então o resultado seria ["titani"]. Ou seja, a maior string o possível que atende ao padrão é encontrada.
+
+Mas você pode usar o caractere ? para torná-la preguiçosa. Aplicar a regex adaptada /t[a-z]*?i/ à string "titanic" retorna ["ti"].
+
+Observação: ler HTML com expressões regulares deve ser evitado, mas procurar uma string HTML usando expressões regulares é perfeitamente aceitável.
+
+Arrume a regex /<.*>/ para que retorne a tag HTML <h1> mas não a linha "<h1>Winter is coming</h1>". Lembre-se de que o caractere curinga . em uma expressão regular captura qualquer caractere.
+
+ */
+
+// resolução
+
+/**
+ * let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // Altere esta linha
+let result = text.match(myRegex);
+ */
+
+
 app.listen(3030);
 
